@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">multiscreen</string>
+    <string name="color">COLOR</string>
+    <string name="number">NUMBER</string>
+    <string name="family">FAMILY</string>
+    <string name="phrases">PHRASES</string>
+    <string name="kanny">i\'m kanny</string>
+
+</resources>

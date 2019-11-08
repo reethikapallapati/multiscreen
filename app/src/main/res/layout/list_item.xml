@@ -1,0 +1,59 @@
+arrayAdapter.clear();
+
+                database = FirebaseDatabase.getInstance();
+
+                myRef = database.getReference();
+
+                myRef = myRef.child(stu);
+
+
+
+
+                Toast.makeText(Main4Activity.this, dateC + " Date", Toast.LENGTH_SHORT).show();
+
+
+
+                myRef.addChildEventListener(new ChildEventListener() {
+                    @Override
+                    public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
+                        String value = dataSnapshot.getValue(String.class);
+
+
+                        //  Toast.makeText(Main2Activity.this,key+" :Added Into DB",Toast.LENGTH_SHORT).show();
+                        //  if(key.equals(search)) {
+                        boolean check=isContain(value,dateC);
+
+                        if(check==true)
+                        {
+                            mUser.add(value);
+                        }
+                        arrayAdapter.notifyDataSetChanged();
+
+
+                        //}
+
+
+
+                    }
+
+                    @Override
+                    public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+                    }
+
+                    @Override
+                    public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                    }
+
+                    @Override
+                    public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
